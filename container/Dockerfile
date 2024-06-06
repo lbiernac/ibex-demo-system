@@ -95,5 +95,10 @@ RUN python3 -m pip install --user -U pip setuptools==58.2.0 testresources \
         --no-warn-script-location \
     && rm -f /tmp/python-requirements.txt
 
+# Copy /etc/udev Rules
+COPY container/udev-rules/90-arty-a7.rules /etc/udev/rules.d/90-arty-a7.rules
+COPY container/udev-rules/99-openfpgaloader.rules /etc/udev/rules.d/99-openfpgaloader.rules
+COPY container/udev-rules/99-openocd.rules /etc/udev/rules.d/99-openocd.rules
+
 ENTRYPOINT [ ]
 CMD [ "/start.sh" ]

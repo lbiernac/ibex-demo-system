@@ -1,0 +1,15 @@
+ACTION!="add|change", GOTO="openocd_rules_end"
+SUBSYSTEM!="usb|tty|hidraw", GOTO="openocd_rules_end"
+
+# Please keep this list sorted by VID:PID
+
+# Original FT232/FT245 VID:PID
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE="664", GROUP="plugdev"
+
+# Original FT2232 VID:PID
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="664", GROUP="plugdev"
+
+# CMSIS-DAP compatible adapters
+ATTRS{product}=="*CMSIS-DAP*", MODE="664", GROUP="plugdev"
+
+LABEL="openocd_rules_end"
