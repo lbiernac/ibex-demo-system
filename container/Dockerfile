@@ -59,7 +59,7 @@ RUN tar -C / -xf openfpgaloader.tar.gz --strip-components=1
 # Build OpenOCD
 RUN git clone https://github.com/openocd-org/openocd.git \
     && cd openocd \
-    && git checkout v0.11.0 \
+    && git checkout v0.12.0 \
     && ./bootstrap \
     && ./configure \
     && make \
